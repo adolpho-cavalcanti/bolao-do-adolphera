@@ -20,7 +20,7 @@ export default function Home() {
             </p>
             <button
               onClick={() => signOut({
-                callbackUrl: `${window.location.origin}`,
+                callbackUrl: `${window?.location.origin}`,
               })}
               className="font-semibold underline opacity-70 hover:opacity-100"
             >

@@ -70,6 +70,7 @@ export default NextAuth({
       sendVerificationRequest,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   adapter: FaunaAdapter(client),
   pages: {
     signIn: '/auth/signin',
