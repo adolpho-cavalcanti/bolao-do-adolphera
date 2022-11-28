@@ -8,7 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@heroicons/react": "v1",
+    "@mui/material": "^5.10.14",
     "@next-auth/fauna-adapter": "^0.2.2-next.15",
     "faunadb": "^4.7.1",
     "handlebars": "^4.7.7",
