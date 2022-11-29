@@ -552,6 +552,18 @@ export default function Palpites() {
           image: secondB.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleOitavasJ5 = (quartasJ1Visit) => {
     if (quartasJ1Visit.value == primaryB.value) {
@@ -565,6 +577,18 @@ export default function Palpites() {
         image: secondA.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
 
   const handleOitavasJ2 = (quartasJ2Home) => {
@@ -579,6 +603,18 @@ export default function Palpites() {
         image: secondD.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleOitavasJ6 = (quartasJ2Visit) => {
     if (quartasJ2Visit.value == primaryD.value) {
@@ -592,6 +628,18 @@ export default function Palpites() {
         image: secondC.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleOitavasJ3 = (quartasJ3Home) => {
     if (quartasJ3Home.value == primaryE.value) {
@@ -605,6 +653,18 @@ export default function Palpites() {
         image: secondF.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleOitavasJ7 = (quartasJ3Visit) => {
     if (quartasJ3Visit.value == primaryF.value) {
@@ -618,6 +678,18 @@ export default function Palpites() {
         image: secondE.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
 
   const handleOitavasJ4 = (quartasJ4Home) => {
@@ -632,6 +704,18 @@ export default function Palpites() {
         image: secondH.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleOitavasJ8 = (quartasJ4Visit) => {
     if (quartasJ4Visit.value == primaryH.value) {
@@ -645,6 +729,18 @@ export default function Palpites() {
         image: secondG.image
       });
     }
+    setQualificationSemi1({ value: "", image: "" });
+    setQualificationSemi2({ value: "", image: "" });
+    setQualificationSemi3({ value: "", image: "" });
+    setQualificationSemi4({ value: "", image: "" });
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
 
   const handleQuartas1 = (nationsClassificatedSemi1) => {
@@ -659,6 +755,14 @@ export default function Palpites() {
         image: qualificationQuartasJ2Home.image
       });
     }
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleQuartas2 = (nationsClassificatedSemi2) => {
     if (nationsClassificatedSemi2.value == qualificationQuartasJ3Home.value) {
@@ -672,6 +776,14 @@ export default function Palpites() {
         image: qualificationQuartasJ4Home.image
       });
     }
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleQuartas3 = (nationsClassificatedSemi3) => {
     if (nationsClassificatedSemi3.value == qualificationQuartasJ1Visit.value) {
@@ -685,6 +797,14 @@ export default function Palpites() {
         image: qualificationQuartasJ2Visit.image
       });
     }
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
   const handleQuartas4 = (nationsClassificatedSemi4) => {
     if (nationsClassificatedSemi4.value == qualificationQuartasJ3Visit.value) {
@@ -698,6 +818,14 @@ export default function Palpites() {
         image: qualificationQuartasJ4Visit.image
       });
     }
+    setQualificationThirdPosition1({ value: "", image: ""});
+    setQualificationThirdPosition2({ value: "", image: ""});
+    setQualificationFinal1({ value: "", image: ""});
+    setQualificationFinal2({ value: "", image: ""});
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   };
 
   const handleSemi1 = (nationsClassificatedFinal1) => {
@@ -720,6 +848,10 @@ export default function Palpites() {
         image: qualificationSemi1.image
       });
     }
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   }
   const handleSemi2 = (nationsClassificatedFinal2) => {
     if (nationsClassificatedFinal2.value == qualificationSemi3.value) {
@@ -741,6 +873,10 @@ export default function Palpites() {
         image: qualificationSemi3.image
       });
     }
+    setChampionPosition({ value: "", image: "" });
+    setVicePosition({ value: "", image: "" });
+    setThirdPosition({ value: "", image: "" });
+    setFourPosition({ value: "", image: "" });
   }
 
   const handleThirdPosition = (nationsSelected) => {
@@ -1246,13 +1382,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryA.value}>
                 <button value={primaryA.value} onClick={() => handleOitavasJ1(primaryA)}>
-                  <Image src={`/./icon-${primaryA.image}.svg`} alt="" height="50" width="50" />
+                  { primaryA.image && <Image src={`/./icon-${primaryA.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondB.value}>
                 <button value={secondB.value} onClick={() => handleOitavasJ1(secondB)}>
-                  <Image src={`/./icon-${secondB.image}.svg`} alt="" height="50" width="50" />
+                  { secondB.image && <Image src={`/./icon-${secondB.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1262,13 +1398,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryC.value}>
                 <button value={primaryC.value} onClick={() => handleOitavasJ2(primaryC)}>
-                  <Image src={`/./icon-${primaryC.image}.svg`} alt="" height="50" width="50" />
+                  { primaryC.image && <Image src={`/./icon-${primaryC.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondD.value}>
                 <button value={secondD.value} onClick={() => handleOitavasJ2(secondD)}>
-                  <Image src={`/./icon-${secondD.image}.svg`} alt="" height="50" width="50" />
+                  { secondD.image && <Image src={`/./icon-${secondD.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1278,13 +1414,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryE.value}>
                 <button value={primaryE.value} onClick={() => handleOitavasJ3(primaryE)}>
-                  <Image src={`/./icon-${primaryE.image}.svg`} alt="" height="50" width="50" />
+                  { primaryE.image && <Image src={`/./icon-${primaryE.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondF.value}>
                 <button value={secondF.value} onClick={() => handleOitavasJ3(secondF)}>
-                  <Image src={`/./icon-${secondF.image}.svg`} alt="" height="50" width="50" />
+                  { secondF.image && <Image src={`/./icon-${secondF.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1294,13 +1430,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryG.value}>
                 <button value={primaryG.value} onClick={() => handleOitavasJ4(primaryG)}>
-                  <Image src={`/./icon-${primaryG.image}.svg`} alt="" height="50" width="50" />
+                  { primaryG.image && <Image src={`/./icon-${primaryG.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondH.value}>
                 <button value={secondH.value} onClick={() => handleOitavasJ4(secondH)}>
-                  <Image src={`/./icon-${secondH.image}.svg`} alt="" height="50" width="50" />
+                  { secondH.image && <Image src={`/./icon-${secondH.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1312,13 +1448,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryB.value}>
                 <button value={primaryB.value} onClick={() => handleOitavasJ5(primaryB)}>
-                  <Image src={`/./icon-${primaryB.image}.svg`} alt="" height="50" width="50" />
+                  { primaryB.image && <Image src={`/./icon-${primaryB.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondA.value}>
                 <button value={secondA.value} onClick={() => handleOitavasJ5(secondA)}>
-                  <Image src={`/./icon-${secondA.image}.svg`} alt="" height="50" width="50" />
+                  { secondA.image && <Image src={`/./icon-${secondA.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1328,13 +1464,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryD.value}>
                 <button value={primaryD.value} onClick={() => handleOitavasJ6(primaryD)}>
-                  <Image src={`/./icon-${primaryD.image}.svg`} alt="" height="50" width="50" />
+                  { primaryD.image && <Image src={`/./icon-${primaryD.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondC.value}>
                 <button value={secondC.value} onClick={() => handleOitavasJ6(secondC)}>
-                  <Image src={`/./icon-${secondC.image}.svg`} alt="" height="50" width="50" />
+                  { secondC.image && <Image src={`/./icon-${secondC.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1344,13 +1480,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryF.value}>
                 <button value={primaryF.value} onClick={() => handleOitavasJ7(primaryF)}>
-                  <Image src={`/./icon-${primaryF.image}.svg`} alt="" height="50" width="50" />
+                  { primaryF.image && <Image src={`/./icon-${primaryF.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondE.value}>
                 <button value={secondE.value} onClick={() => handleOitavasJ7(secondE)}>
-                  <Image src={`/./icon-${secondE.image}.svg`} alt="" height="50" width="50" />
+                  { secondE.image && <Image src={`/./icon-${secondE.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1360,13 +1496,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryH.value}>
                 <button value={primaryH.value} onClick={() => handleOitavasJ8(primaryH)}>
-                  <Image src={`/./icon-${primaryH.image}.svg`} alt="" height="50" width="50" />
+                  { primaryH.image && <Image src={`/./icon-${primaryH.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={secondG.value}>
                 <button value={secondG.value} onClick={() => handleOitavasJ8(secondG)}>
-                  <Image src={`/./icon-${secondG.image}.svg`} alt="" height="50" width="50" />
+                  { secondG.image && <Image src={`/./icon-${secondG.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1382,13 +1518,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ1Home.value}>
                 <button value={qualificationQuartasJ1Home.value} onClick={() => handleQuartas1(qualificationQuartasJ1Home)}>
-                  <Image src={`/./icon-${qualificationQuartasJ1Home.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ1Home.image && <Image src={`/./icon-${qualificationQuartasJ1Home.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ2Home.value}>
                 <button value={qualificationQuartasJ2Home.value} onClick={() => handleQuartas1(qualificationQuartasJ2Home)}>
-                  <Image src={`/./icon-${qualificationQuartasJ2Home.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ2Home.image && <Image src={`/./icon-${qualificationQuartasJ2Home.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1398,13 +1534,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ3Home.value}>
                 <button value={qualificationQuartasJ3Home.value} onClick={() => handleQuartas2(qualificationQuartasJ3Home)}>
-                  <Image src={`/./icon-${qualificationQuartasJ3Home.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ3Home.image && <Image src={`/./icon-${qualificationQuartasJ3Home.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ4Home.value}>
                 <button value={qualificationQuartasJ4Home.value} onClick={() => handleQuartas2(qualificationQuartasJ4Home)}>
-                  <Image src={`/./icon-${qualificationQuartasJ4Home.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ4Home.image && <Image src={`/./icon-${qualificationQuartasJ4Home.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1414,13 +1550,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ1Visit.value}>
                 <button value={qualificationQuartasJ1Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ1Visit)}>
-                  <Image src={`/./icon-${qualificationQuartasJ1Visit.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ1Visit.image && <Image src={`/./icon-${qualificationQuartasJ1Visit.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ2Visit.value}>
                 <button value={qualificationQuartasJ2Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ2Visit)}>
-                  <Image src={`/./icon-${qualificationQuartasJ2Visit.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ2Visit.image && <Image src={`/./icon-${qualificationQuartasJ2Visit.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1430,13 +1566,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ3Visit.value}>
                 <button value={qualificationQuartasJ3Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ3Visit)}>
-                  <Image src={`/./icon-${qualificationQuartasJ3Visit.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ3Visit.image && <Image src={`/./icon-${qualificationQuartasJ3Visit.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ4Visit.value}>
                 <button value={qualificationQuartasJ4Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ4Visit)}>
-                  <Image src={`/./icon-${qualificationQuartasJ4Visit.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationQuartasJ4Visit.image && <Image src={`/./icon-${qualificationQuartasJ4Visit.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1452,13 +1588,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationSemi1.value}>
                 <button value={qualificationSemi1.value} onClick={() => handleSemi1(qualificationSemi1)}>
-                  <Image src={`/./icon-${qualificationSemi1.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationSemi1.image && <Image src={`/./icon-${qualificationSemi1.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationSemi2.value}>
                 <button value={qualificationSemi2.value} onClick={() => handleSemi1(qualificationSemi2)}>
-                  <Image src={`/./icon-${qualificationSemi2.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationSemi2.image && <Image src={`/./icon-${qualificationSemi2.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1468,13 +1604,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationSemi3.value}>
                 <button value={qualificationSemi3.value} onClick={() => handleSemi2(qualificationSemi3)}>
-                  <Image src={`/./icon-${qualificationSemi3.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationSemi3.image && <Image src={`/./icon-${qualificationSemi3.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationSemi4.value}>
                 <button value={qualificationSemi4.value} onClick={() => handleSemi2(qualificationSemi4)}>
-                  <Image src={`/./icon-${qualificationSemi4.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationSemi4.image && <Image src={`/./icon-${qualificationSemi4.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1491,13 +1627,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationThirdPosition1.value}>
                 <button value={qualificationThirdPosition1.value} onClick={() => handleThirdPosition(qualificationThirdPosition1)}>
-                  <Image src={`/./icon-${qualificationThirdPosition1.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationThirdPosition1.image && <Image src={`/./icon-${qualificationThirdPosition1.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationThirdPosition2.value}>
                 <button value={qualificationThirdPosition2.value} onClick={() => handleThirdPosition(qualificationThirdPosition2)}>
-                  <Image src={`/./icon-${qualificationThirdPosition2.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationThirdPosition2.image && <Image src={`/./icon-${qualificationThirdPosition2.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1513,13 +1649,13 @@ export default function Palpites() {
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationFinal1.value}>
                 <button value={qualificationFinal1.value} onClick={() => handleFinal(qualificationFinal1)}>
-                  <Image src={`/./icon-${qualificationFinal1.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationFinal1.image && <Image src={`/./icon-${qualificationFinal1.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
               <li> x </li>
               <li id={qualificationFinal2.value}>
                 <button value={qualificationFinal2.value} onClick={() => handleFinal(qualificationFinal2)}>
-                  <Image src={`/./icon-${qualificationFinal2.image}.svg`} alt="" height="50" width="50" />
+                  { qualificationFinal2.image && <Image src={`/./icon-${qualificationFinal2.image}.svg`} alt="" height="50" width="50" /> }
                 </button>
               </li>
             </ul>
@@ -1533,16 +1669,16 @@ export default function Palpites() {
           <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
             <ul className="flex justify-center items-center gap-4">
               <li>
-                1º <Image src={`/./icon-${ChampionPosition.image}.svg`} alt="" height="50" width="50" />
+                1º { ChampionPosition.image && <Image src={`/./icon-${ChampionPosition.image}.svg`} alt="" height="50" width="50" /> }
               </li>
               <li>
-                2º <Image src={`/./icon-${vicePosition.image}.svg`} alt="" height="50" width="50" />
+                2º { vicePosition.image && <Image src={`/./icon-${vicePosition.image}.svg`} alt="" height="50" width="50" /> }
               </li>
               <li>
-                3º <Image src={`/./icon-${thirdPosition.image}.svg`} alt="" height="50" width="50" />
+                3º { thirdPosition.image && <Image src={`/./icon-${thirdPosition.image}.svg`} alt="" height="50" width="50" /> }
               </li>
               <li>
-                4º <Image src={`/./icon-${fourPosition.image}.svg`} alt="" height="50" width="50" />
+                4º { fourPosition.image && <Image src={`/./icon-${fourPosition.image}.svg`} alt="" height="50" width="50" /> }
               </li>
             </ul>
           </div>
