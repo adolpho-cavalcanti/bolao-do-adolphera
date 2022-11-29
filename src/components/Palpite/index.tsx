@@ -141,7 +141,7 @@ const gropoh2 = [
   { value: "Coreia do Sul", label: "Coreia do Sul", image: "coreia"}
 ];
 
-export default function Palpites() {
+export default function Palpite() {
   const [primaryA, setPrimaryA] = useState({
     value: "",
     image: ""

@@ -8,7 +8,7 @@ const Login = ({ providers }) => {
         {Object.values(providers).map((provider: any) => (
           <div key={provider.name}>
             <button onClick={() => signIn(provider.id, { callbackUrl: "/" })}>
-              <span>Sign in with {provider.name}</span>
+              <span>Entrar usando {provider.name}</span>
             </button>
           </div>
         ))}
