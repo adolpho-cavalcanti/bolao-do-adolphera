@@ -1271,52 +1271,57 @@ export default function Palpite() {
         <h2 className="text-2xl">Confirmar o seu palpite!</h2>
         <section className="w-full flex max-md:flex-col">
           <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
-            <form onSubmit={handleCreatePalpite} className="mt-6 flex gap-2">
-              <input 
-                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                type="hidden"
-                name="first" 
-                value={championPosition.value}
-              />
-              <input 
-                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                type="hidden"
-                name="second" 
-                value={vicePosition.value}
-              />
-              <input 
-                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                type="hidden"
-                name="third" 
-                value={thirdPosition.value}
-              />
-              <input 
-                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                type="hidden"
-                name="fourth" 
-                value={fourPosition.value}
-              />
-              <button 
-                className="bg-blue-300 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-blue-400"
-                type="submit"
-              >
-                Pode confirmar
-              </button>
-            </form>
-
-            {state === 'Error' && (
-              <div className="mt-4 pt-2 pb-2 flex items-center justify-center">
+            {championPosition.value && thirdPosition.value
+              ?
+              <form onSubmit={handleCreatePalpite} className="mt-6 flex gap-2">
+                <input 
+                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                  type="hidden"
+                  name="first" 
+                  value={championPosition.value}
+                />
+                <input 
+                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                  type="hidden"
+                  name="second" 
+                  value={vicePosition.value}
+                />
+                <input 
+                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                  type="hidden"
+                  name="third" 
+                  value={thirdPosition.value}
+                />
+                <input 
+                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                  type="hidden"
+                  name="fourth" 
+                  value={fourPosition.value}
+                />
+                <button 
+                  className="bg-blue-300 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-blue-400"
+                  type="submit"
+                >
+                  Pode confirmar
+                </button>
+              </form>
+            :
+              <span>
+                Preencha todos os caminhos para a glória eterna
+              </span>
+          }
+          {state === 'Error' && (
+              <div className="w-full mt-4 pt-2 pb-2 flex items-center justify-center">
                 <span className="text-red-500 mt-4">{errorMsg}</span>
               </div>
             )}
             {state === 'Success' && (
-              <div className="mt-4 pt-2 pb-2 flex items-center justify-center">
+              <div className="w-full mt-4 pt-2 pb-2 flex items-center justify-center">
                 <span className="text-green-500 mt-4">Maravilha, seu palpite foi registrado em nossa base de dados, 
                   em breve você será notificado a fazer o PIX e confirmar seu palpite. Boa sorte!
                 </span>
               </div>
             )}
-
           </div>
         </section>
       </div>
