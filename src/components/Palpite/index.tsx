@@ -1,8 +1,8 @@
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 
+import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import argentina from '../../assets/bandeiras/icon-argentina.svg';
 import australia from '../../assets/bandeiras/icon-australia.svg';
@@ -143,84 +143,76 @@ const gropoh2 = [
 
 export default function Palpite() {
   const [primaryA, setPrimaryA] = useState({
-    value: "",
-    image: ""
+    value: "Holanda",
+    image: "holanda"
   });
   const [secondA, setSecondA] = useState({
-    value: "",
-    image: ""
+    value: "Senegal",
+    image: "senegal"
   });
-  const [nationsRestA, setNationsRestA] = useState(gropoa2);
 
   const [primaryB, setPrimaryB] = useState({
-    value: "",
-    image: ""
+    value: "Inglaterra",
+    image: "inglaterra"
   });
   const [secondB, setSecondB] = useState({
-    value: "",
-    image: ""
+    value: "usa",
+    image: "usa"
   });
-  const [nationsRestB, setNationsRestB] = useState(gropob2);
 
   const [primaryC, setPrimaryC] = useState({
-    value: "",
-    image: ""
+    value: "Argentina",
+    image: "argentina"
   });
   const [secondC, setSecondC] = useState({
-    value: "",
-    image: ""
+    value: "Polônia",
+    image: "polonia"
   });
-  const [nationsRestC, setNationsRestC] = useState(gropoc2);
 
   const [primaryD, setPrimaryD] = useState({
-    value: "",
-    image: ""
+    value: "França",
+    image: "franca"
   });
   const [secondD, setSecondD] = useState({
-    value: "",
-    image: ""
+    value: "Austrália",
+    image: "australia"
   });
-  const [nationsRestD, setNationsRestD] = useState(gropod2);
 
   const [primaryE, setPrimaryE] = useState({
-    value: "",
-    image: ""
+    value: "Japão",
+    image: "japao"
   });
   const [secondE, setSecondE] = useState({
-    value: "",
-    image: ""
+    value: "Espanha",
+    image: "espanha"
   });
-  const [nationsRestE, setNationsRestE] = useState(gropoe2);
 
   const [primaryF, setPrimaryF] = useState({
-    value: "",
-    image: ""
+    value: "Marrocos",
+    image: "marrocos"
   });
   const [secondF, setSecondF] = useState({
-    value: "",
-    image: ""
+    value: "Croacia",
+    image: "croacia"
   });
-  const [nationsRestF, setNationsRestF] = useState(gropof2);
 
   const [primaryG, setPrimaryG] = useState({
-    value: "",
-    image: ""
+    value: "Brasil",
+    image: "brasil"
   });
   const [secondG, setSecondG] = useState({
-    value: "",
-    image: ""
+    value: "Suiça",
+    image: "suica"
   });
-  const [nationsRestG, setNationsRestG] = useState(gropog2);
 
   const [primaryH, setPrimaryH] = useState({
-    value: "",
-    image: ""
+    value: "Portugal",
+    image: "portugal"
   });
   const [secondH, setSecondH] = useState({
-    value: "",
-    image: ""
+    value: "Gana",
+    image: "gana"
   });
-  const [nationsRestH, setNationsRestH] = useState(gropoh2);
 
   //QUARTAS
   const [qualificationQuartasJ1Home, setQualificationQuartasJ1Home] = useState({
@@ -324,220 +316,11 @@ export default function Palpite() {
     value: "",
     image: ""
   });
-  const [ChampionPosition,setChampionPosition] = useState({
+  const [championPosition,setChampionPosition] = useState({
     value: "",
     image: ""
   });
   
-  const handleChangeSelectedPrimaryA = (event) => {
-    const nationsSelected1A = event.target.value;
-    const nationsInSecondPositionA = gropoa2.filter(
-      (opt) => opt.value !== nationsSelected1A
-    );
-    const imageSelecion = gropoa2.filter(
-      (opt) => opt.value == nationsSelected1A
-    );
-    setPrimaryA({
-      value: nationsSelected1A,
-      image: imageSelecion[0].image
-    });
-    setNationsRestA(nationsInSecondPositionA);
-  };
-  const handleChangeSelectedSecondA = (event) => {
-    const nationsSelected2A = event.target.value;
-    const imageSelecion = gropoa2.filter(
-      (opt) => opt.value == nationsSelected2A
-    );
-    setSecondA({
-      value: nationsSelected2A,
-      image: imageSelecion[0].image
-    });
-  };
-
-  const handleChangeSelectedPrimaryB = (event) => {
-    const nationsSelected1B = event.target.value;
-    const nationsInSecondPositionB = gropob2.filter(
-      (opt) => opt.value !== nationsSelected1B
-    );
-    
-    const imageSelecion = gropob2.filter(
-      (opt) => opt.value == nationsSelected1B
-    );
-    setPrimaryB({
-      value: nationsSelected1B,
-      image: imageSelecion[0].image
-    });
-    setNationsRestB(nationsInSecondPositionB);
-  };
-
-  const handleChangeSelectedSecondB = (event) => {
-    const nationsSelected2B = event.target.value;
-    const imageSelecion = gropob2.filter(
-      (opt) => opt.value == nationsSelected2B
-    );
-    setSecondB({
-      value: nationsSelected2B,
-      image: imageSelecion[0].image
-    });
-
-  };
-  
-  const handleChangeSelectedPrimaryC = (event) => {
-    const nationsSelected1C = event.target.value;
-    const nationsInSecondPositionC = gropoc2.filter(
-      (opt) => opt.value !== nationsSelected1C
-    );
-
-    const imageSelecion = gropoc2.filter(
-      (opt) => opt.value == nationsSelected1C
-    );
-    setPrimaryC({
-      value: nationsSelected1C,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestC(nationsInSecondPositionC);
-  };
-  const handleChangeSelectedSecondC = (event) => {
-    const nationsSelected2C = event.target.value;
-    const imageSelecion = gropoc2.filter(
-      (opt) => opt.value == nationsSelected2C
-    );
-    setSecondC({
-      value: nationsSelected2C,
-      image: imageSelecion[0].image
-    });
-
-  };
-
-  const handleChangeSelectedPrimaryD = (event) => {
-    const nationsSelected1D = event.target.value;
-    const nationsInSecondPositionD = gropod2.filter(
-      (opt) => opt.value !== nationsSelected1D
-    );
-    const imageSelecion = gropod2.filter(
-      (opt) => opt.value == nationsSelected1D
-    );
-    setPrimaryD({
-      value: nationsSelected1D,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestD(nationsInSecondPositionD);
-  };
-  const handleChangeSelectedSecondD = (event) => {
-    const nationsSelected2D = event.target.value;
-    const imageSelecion = gropod2.filter(
-      (opt) => opt.value == nationsSelected2D
-    );
-    setSecondD({
-      value: nationsSelected2D,
-      image: imageSelecion[0].image
-    });
-
-  };
-
-  const handleChangeSelectedPrimaryE = (event) => {
-    const nationsSelected1E = event.target.value;
-    const nationsInSecondPositionE = gropoe2.filter(
-      (opt) => opt.value !== nationsSelected1E
-    );
-    const imageSelecion = gropoe2.filter(
-      (opt) => opt.value == nationsSelected1E
-    );
-    setPrimaryE({
-      value: nationsSelected1E,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestE(nationsInSecondPositionE);
-  };
-  const handleChangeSelectedSecondE = (event) => {
-    const nationsSelected2E = event.target.value;
-    const imageSelecion = gropoe2.filter(
-      (opt) => opt.value == nationsSelected2E
-    );
-    setSecondE({
-      value: nationsSelected2E,
-      image: imageSelecion[0].image
-    });
-
-  };
-
-  const handleChangeSelectedPrimaryF = (event) => {
-    const nationsSelected1F = event.target.value;
-    const nationsInSecondPositionF = gropof2.filter(
-      (opt) => opt.value !== nationsSelected1F
-    );
-    const imageSelecion = gropof2.filter(
-      (opt) => opt.value == nationsSelected1F
-    );
-    setPrimaryF({
-      value: nationsSelected1F,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestF(nationsInSecondPositionF);
-  };
-  const handleChangeSelectedSecondF = (event) => {
-    const nationsSelected2F = event.target.value;
-    const imageSelecion = gropof2.filter(
-      (opt) => opt.value == nationsSelected2F
-    );
-    setSecondF({
-      value: nationsSelected2F,
-      image: imageSelecion[0].image
-    });
-
-  };
-
-  const handleChangeSelectedPrimaryG = (event) => {
-    const nationsSelected1G = event.target.value;
-    const nationsInSecondPositionG = gropog2.filter(
-      (opt) => opt.value !== nationsSelected1G
-    );
-    const imageSelecion = gropog2.filter(
-      (opt) => opt.value == nationsSelected1G
-    );
-    setPrimaryG({
-      value: nationsSelected1G,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestG(nationsInSecondPositionG);
-  };
-  const handleChangeSelectedSecondG = (event) => {
-    const nationsSelected2G = event.target.value;
-    const imageSelecion = gropog2.filter(
-      (opt) => opt.value == nationsSelected2G
-    );
-    setSecondG({
-      value: nationsSelected2G,
-      image: imageSelecion[0].image
-    });
-
-  };
-
-  const handleChangeSelectedPrimaryH = (event) => {
-    const nationsSelected1H = event.target.value;
-    const nationsInSecondPositionH = gropoh2.filter(
-      (opt) => opt.value !== nationsSelected1H
-    );
-    const imageSelecion = gropoh2.filter(
-      (opt) => opt.value == nationsSelected1H
-    );
-    setPrimaryH({
-      value: nationsSelected1H,
-      image: imageSelecion[0].image
-    }); 
-    setNationsRestH(nationsInSecondPositionH);
-  };
-  const handleChangeSelectedSecondH = (event) => {
-    const nationsSelected2H = event.target.value;
-    const imageSelecion = gropoh2.filter(
-      (opt) => opt.value == nationsSelected2H
-    );
-    setSecondH({
-      value: nationsSelected2H,
-      image: imageSelecion[0].image
-    });
-
-  };
 
   //Handle Quartas
   const handleOitavasJ1 = (quartasJ1Home) => {
@@ -923,6 +706,55 @@ export default function Palpite() {
     }
   }
 
+
+  interface Iuser {
+    name?: string;
+    email?: string;
+    image?: string;
+    uid?: string;
+  }
+  const { data: session } = useSession();
+  const user: Iuser = session?.user;
+
+  const [state, setState] = useState('idle');
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  
+  
+
+  useEffect(() => {
+    setName(user?.name);
+    setEmail(user?.email);
+  }, []);
+  
+  const handleCreatePalpite = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    setState('Loading');
+
+    const {value: champion} = championPosition;
+    const {value: second} = vicePosition;
+    const {value: Third} = thirdPosition;
+    const {value: Fouth} = fourPosition;
+
+    try {
+      const data = await axios.post('http://localhost:3000/api/palpites', {
+        email,
+	      name,
+        champion,
+        second,
+        Third,
+        Fouth
+       })
+      console.log(data);
+      
+    } catch (e: any) {
+      console.log(e.data.data.error);
+      setErrorMsg(e.data.data.error);
+      setState('Error');
+    }
+  }
+
   return (
     <main className="max-w-[1310px] h-full mt-2 mx-auto bg-black text-white">
       <div className="w-full flex flex-col justify-center items-center">
@@ -932,56 +764,23 @@ export default function Palpite() {
             <h3>Gruop A</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={catar} alt="Bandeira do Catar" />
-                  <span className="font-bold text-xl">Catar</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={holanda} alt="Bandeira do holanda" />
+                <span className="font-bold text-xl">Holanda</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-2">
                   <Image src={senegal} alt="Bandeira do Senegal" />
-                  <span className="font-bold text-xl">Senegal</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={equador} alt="Bandeira do Equador" />
-                  <span className="font-bold text-xl">Equador</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={holanda} alt="Bandeira do holanda" />
-                  <span className="font-bold text-xl">Holanda</span>
-                </div>
-                <button 
-                  className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                >
-                  Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryA.value}
-                  helperText="1º do Grupo A"
-                  onChange={handleChangeSelectedPrimaryA}
-                >
-                  {gropoa1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondA.value}
-                  helperText="2º do Grupo A"
-                  onChange={handleChangeSelectedSecondA}
-                >
-                  {nationsRestA.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                  <span className="font-bold text-xl">Senegal </span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={equador} alt="Bandeira do Equador" />
+                <span className="font-bold text-xl">Equador</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={catar} alt="Bandeira do Catar" />
+                <span className="font-bold text-xl">Catar</span>
+              </div>
+                
             </div>
           </div>
           
@@ -989,54 +788,23 @@ export default function Palpite() {
             <h3>Gruop B</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={inglaterra} alt="Bandeira do Inglaterra" />
-                  <span className="font-bold text-xl">Inglaterra</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={ira} alt="Bandeira do Irã" />
-                  <span className="font-bold text-xl">Irã</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={usa} alt="Bandeira do Estados Unidos" />
-                  <span className="font-bold text-xl">Estados Unidos</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={gales} alt="Bandeira do Gales" />
-                  <span className="font-bold text-xl">País de Gales</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryB.value}
-                  helperText="1º do Grupo B"
-                  onChange={handleChangeSelectedPrimaryB}
-                >
-                  {gropob1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={inglaterra} alt="Bandeira do Inglaterra" />
+                <span className="font-bold text-xl">Inglaterra</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={usa} alt="Bandeira do Estados Unidos" />
+                <span className="font-bold text-xl">Estados Unidos</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={ira} alt="Bandeira do Irã" />
+                <span className="font-bold text-xl">Irã</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={gales} alt="Bandeira do Gales" />
+                <span className="font-bold text-xl">País de Gales</span>
+              </div>
 
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondB.value}
-                  helperText="2º do Grupo B"
-                  onChange={handleChangeSelectedSecondB}
-                >
-                  {nationsRestB.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
             </div>
           </div>
 
@@ -1044,54 +812,23 @@ export default function Palpite() {
             <h3>Gruop C</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={polonia} alt="Bandeira do Polônia" />
-                  <span className="font-bold text-xl">Polônia</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={argentina} alt="Bandeira do Argentina" />
-                  <span className="font-bold text-xl">Argentina</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={mexico} alt="Bandeira do México" />
-                  <span className="font-bold text-xl">México</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={arabia} alt="Bandeira do Arábia Saudita" />
-                  <span className="font-bold text-xl">Arábia Saudita</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryC.value}
-                  helperText="1º do Grupo C"
-                  onChange={handleChangeSelectedPrimaryC}
-                >
-                  {gropoc1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondC.value}
-                  helperText="2º do Grupo C"
-                  onChange={handleChangeSelectedSecondC}
-                >
-                  {nationsRestC.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={argentina} alt="Bandeira do Argentina" />
+                <span className="font-bold text-xl">Argentina</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={polonia} alt="Bandeira do Polônia" />
+                <span className="font-bold text-xl">Polônia</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={mexico} alt="Bandeira do México" />
+                <span className="font-bold text-xl">México</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={arabia} alt="Bandeira do Arábia Saudita" />
+                <span className="font-bold text-xl">Arábia Saudita</span>
+              </div>
+              
             </div>
           </div>
 
@@ -1100,12 +837,8 @@ export default function Palpite() {
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
                 <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={franca} alt="Bandeira do Catar" />
-                  <span className="font-bold text-xl">Catar</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={dinamarca} alt="Bandeira do Dinamarca" />
-                  <span className="font-bold text-xl">Dinamarca</span>
+                  <Image src={franca} alt="Bandeira do França" />
+                  <span className="font-bold text-xl">França</span>
                 </div>
                 <div className="mt-2 mb-2 flex items-center gap-4">
                   <Image src={australia} alt="Bandeira do Austrália" />
@@ -1115,38 +848,11 @@ export default function Palpite() {
                   <Image src={tunisia} alt="Bandeira do Tunísia" />
                   <span className="font-bold text-xl">Tunísia</span>
                 </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryD.value}
-                  helperText="1º do Grupo D"
-                  onChange={handleChangeSelectedPrimaryD}
-                >
-                  {gropod1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                <div className="mt-2 mb-2 flex items-center gap-4">
+                  <Image src={dinamarca} alt="Bandeira do Dinamarca" />
+                  <span className="font-bold text-xl">Dinamarca</span>
+                </div>
 
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondD.value}
-                  helperText="2º do Grupo D"
-                  onChange={handleChangeSelectedSecondD}
-                >
-                  {nationsRestD.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
             </div>
           </div>
 
@@ -1156,54 +862,23 @@ export default function Palpite() {
             <h3>Gruop E</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={japao} alt="Bandeira do Japão" />
-                  <span className="font-bold text-xl">Japão</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={costaRica} alt="Bandeira do Costa Rica" />
-                  <span className="font-bold text-xl">Costa Rica</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={alemanha} alt="Bandeira do Alemanha" />
-                  <span className="font-bold text-xl">Alemanha</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={espanha} alt="Bandeira do Espanha" />
-                  <span className="font-bold text-xl">Espanha</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryE.value}
-                  helperText="1º do Grupo E"
-                  onChange={handleChangeSelectedPrimaryE}
-                >
-                  {gropoe1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondE.value}
-                  helperText="2º do Grupo E"
-                  onChange={handleChangeSelectedSecondE}
-                >
-                  {nationsRestE.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={espanha} alt="Bandeira do Espanha" />
+                <span className="font-bold text-xl">Espanha</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={alemanha} alt="Bandeira do Alemanha" />
+                <span className="font-bold text-xl">Alemanha</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={japao} alt="Bandeira do Japão" />
+                <span className="font-bold text-xl">Japão</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={costaRica} alt="Bandeira do Costa Rica" />
+                <span className="font-bold text-xl">Costa Rica</span>
+              </div>
+                
             </div>
           </div>
           
@@ -1212,53 +887,22 @@ export default function Palpite() {
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
                 <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={belgica} alt="Bandeira do Bélgica" />
-                  <span className="font-bold text-xl">Bélgica</span>
+                  <Image src={marrocos} alt="Bandeira do Marrocos" />
+                  <span className="font-bold text-xl">Marrocos</span>
                 </div>
                 <div className="mt-2 mb-2 flex items-center gap-4">
                   <Image src={croacia} alt="Bandeira do Croacia" />
                   <span className="font-bold text-xl">Croacia</span>
                 </div>
                 <div className="mt-2 mb-2 flex items-center gap-4">
+                  <Image src={belgica} alt="Bandeira do Bélgica" />
+                  <span className="font-bold text-xl">Bélgica</span>
+                </div>
+                <div className="mt-2 mb-2 flex items-center gap-4">
                   <Image src={canada} alt="Bandeira do Canadá" />
                   <span className="font-bold text-xl">Canadá</span>
                 </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={marrocos} alt="Bandeira do Marrocos" />
-                  <span className="font-bold text-xl">Marrocos</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryF.value}
-                  helperText="1º do Grupo F"
-                  onChange={handleChangeSelectedPrimaryF}
-                >
-                  {gropof1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondF.value}
-                  helperText="2º do Grupo F"
-                  onChange={handleChangeSelectedSecondF}
-                >
-                  {nationsRestF.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                
             </div>
           </div>
 
@@ -1266,54 +910,23 @@ export default function Palpite() {
             <h3>Gruop G</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={brasil} alt="Bandeira do Brasil" />
-                  <span className="font-bold text-xl">Brasil</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={suica} alt="Bandeira do Suiça" />
-                  <span className="font-bold text-xl">Suiça</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={servia} alt="Bandeira do Sérvia" />
-                  <span className="font-bold text-xl">Sérvia</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={camaroes} alt="Bandeira do Camarões" />
-                  <span className="font-bold text-xl">Camarões</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryG.value}
-                  helperText="1º do Grupo G"
-                  onChange={handleChangeSelectedPrimaryG}
-                >
-                  {gropog1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={brasil} alt="Bandeira do Brasil" />
+                <span className="font-bold text-xl">Brasil</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={servia} alt="Bandeira do Sérvia" />
+                <span className="font-bold text-xl">Sérvia</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={suica} alt="Bandeira do Suiça" />
+                <span className="font-bold text-xl">Suiça</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={camaroes} alt="Bandeira do Camarões" />
+                <span className="font-bold text-xl">Camarões</span>
+              </div>
 
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondG.value}
-                  helperText="2º do Grupo G"
-                  onChange={handleChangeSelectedSecondG}
-                >
-                  {nationsRestG.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
             </div>
           </div>
 
@@ -1321,54 +934,23 @@ export default function Palpite() {
             <h3>Gruop H</h3>
             <div className="w-11/12 flex flex-col justify-center bg-gray-700 rounded py-4 px-8">
                 
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={uruguai} alt="Bandeira do Uruguai" />
-                  <span className="font-bold text-xl">Uruguai</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={gana} alt="Bandeira do Gana" />
-                  <span className="font-bold text-xl">Gana</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={coreia} alt="Bandeira do Coreia do Sul" />
-                  <span className="font-bold text-xl">Coreia do Sul</span>
-                </div>
-                <div className="mt-2 mb-2 flex items-center gap-4">
-                  <Image src={portugal} alt="Bandeira do Portugal" />
-                  <span className="font-bold text-xl">Portugal</span>
-                </div>
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                Escolha os classificados 
-                </button>
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={primaryH.value}
-                  helperText="1º do Grupo H"
-                  onChange={handleChangeSelectedPrimaryH}
-                >
-                  {gropoh1.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-
-                <TextField
-                  color="info"
-                  select
-                  margin="normal"
-                  value={secondH.value}
-                  helperText="2º do Grupo H"
-                  onChange={handleChangeSelectedSecondH}
-                >
-                  {nationsRestH.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={portugal} alt="Bandeira do Portugal" />
+                <span className="font-bold text-xl">Portugal</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={uruguai} alt="Bandeira do Uruguai" />
+                <span className="font-bold text-xl">Uruguai</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={gana} alt="Bandeira do Gana" />
+                <span className="font-bold text-xl">Gana</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={coreia} alt="Bandeira do Coreia do Sul" />
+                <span className="font-bold text-xl">Coreia do Sul</span>
+              </div>
+                
             </div>
           </div>
         </section>
@@ -1669,7 +1251,7 @@ export default function Palpite() {
           <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
             <ul className="flex justify-center items-center gap-4">
               <li>
-                1º { ChampionPosition.image && <Image src={`/./icon-${ChampionPosition.image}.svg`} alt="" height="50" width="50" /> }
+                1º { championPosition.image && <Image src={`/./icon-${championPosition.image}.svg`} alt="" height="50" width="50" /> }
               </li>
               <li>
                 2º { vicePosition.image && <Image src={`/./icon-${vicePosition.image}.svg`} alt="" height="50" width="50" /> }
@@ -1684,6 +1266,61 @@ export default function Palpite() {
           </div>
         </section>
       </div>
+
+      <div className="w-full flex flex-col justify-center items-center mt-7">
+        <h2 className="text-2xl">Confirmar o seu palpite!</h2>
+        <section className="w-full flex max-md:flex-col">
+          <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
+            <form onSubmit={handleCreatePalpite} className="mt-6 flex gap-2">
+              <input 
+                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                type="hidden"
+                name="first" 
+                value={championPosition.value}
+              />
+              <input 
+                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                type="hidden"
+                name="second" 
+                value={vicePosition.value}
+              />
+              <input 
+                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                type="hidden"
+                name="third" 
+                value={thirdPosition.value}
+              />
+              <input 
+                className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                type="hidden"
+                name="fourth" 
+                value={fourPosition.value}
+              />
+              <button 
+                className="bg-blue-300 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-blue-400"
+                type="submit"
+              >
+                Pode confirmar
+              </button>
+            </form>
+
+            {state === 'Error' && (
+              <div className="mt-4 pt-2 pb-2 flex items-center justify-center">
+                <span className="text-red-500 mt-4">{errorMsg}</span>
+              </div>
+            )}
+            {state === 'Success' && (
+              <div className="mt-4 pt-2 pb-2 flex items-center justify-center">
+                <span className="text-green-500 mt-4">Maravilha, seu palpite foi registrado em nossa base de dados, 
+                  em breve você será notificado a fazer o PIX e confirmar seu palpite. Boa sorte!
+                </span>
+              </div>
+            )}
+
+          </div>
+        </section>
+      </div>
+
     </main>
   );
 }
