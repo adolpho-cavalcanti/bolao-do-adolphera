@@ -36,7 +36,7 @@ const ViewPalpite = ({ dataUserActual }) => {
 
 
       <div className="w-full flex flex-col justify-center items-center mt-7">
-        <h2 className="text-2xl">Classificação Final segundo o especialista: {name}</h2>
+        <h2 className="text-2xl">Classificação Final segundo o especialista "Bamo bamo": {name}</h2>
         <section className="w-full flex max-md:flex-col">
           <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
             <ul className="flex justify-center items-center gap-4">
