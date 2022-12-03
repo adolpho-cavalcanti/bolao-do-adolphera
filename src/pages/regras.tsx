@@ -13,10 +13,11 @@ export default function regras() {
   return (
     <>
       <nav className="max-w-[1310px] flex max-md:flex-col max-md:gap-4 justify-between items-center my-8 p-12 mx-auto bg-black border-b border-blue-300 text-white">
-        <Image src={logoSite} alt="Logo do site bolão do adolphera" />
-        <div className="flex items-center gap-6">
+        <Image src={logoSite} width={350} alt="Logo do site bolão do adolphera" />
+        <div className="flex items-center gap-2">
           <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/">Home</Link>
           <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/regras">Regras</Link>
+          <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/todas-as-apostas">Palpites</Link>
         </div>
         <Profile />
         {!session
