@@ -210,8 +210,8 @@ export default function Palpite() {
     image: "portugal"
   });
   const [secondH, setSecondH] = useState({
-    value: "Gana",
-    image: "gana"
+    value: "Coreia do Sul",
+    image: "coreia"
   });
 
   //QUARTAS
@@ -729,7 +729,7 @@ export default function Palpite() {
   }, []);
   
   const handleCreatePalpite = async (e: React.SyntheticEvent) => {
-    e.preventDefault()
+    // e.preventDefault()
     setState('Loading');
 
     const {value: champion} = championPosition;
@@ -747,6 +747,7 @@ export default function Palpite() {
         Fouth
        })
       console.log(data);
+      setState('Success');
       
     } catch (e: any) {
       console.log(e.data.data.error);
@@ -915,16 +916,16 @@ export default function Palpite() {
                 <span className="font-bold text-xl">Brasil</span>
               </div>
               <div className="mt-2 mb-2 flex items-center gap-4">
-                <Image src={servia} alt="Bandeira do Sérvia" />
-                <span className="font-bold text-xl">Sérvia</span>
-              </div>
-              <div className="mt-2 mb-2 flex items-center gap-4">
                 <Image src={suica} alt="Bandeira do Suiça" />
                 <span className="font-bold text-xl">Suiça</span>
               </div>
               <div className="mt-2 mb-2 flex items-center gap-4">
                 <Image src={camaroes} alt="Bandeira do Camarões" />
                 <span className="font-bold text-xl">Camarões</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={servia} alt="Bandeira do Sérvia" />
+                <span className="font-bold text-xl">Sérvia</span>
               </div>
 
             </div>
@@ -939,16 +940,16 @@ export default function Palpite() {
                 <span className="font-bold text-xl">Portugal</span>
               </div>
               <div className="mt-2 mb-2 flex items-center gap-4">
+                <Image src={coreia} alt="Bandeira do Coreia do Sul" />
+                <span className="font-bold text-xl">Coreia do Sul</span>
+              </div>
+              <div className="mt-2 mb-2 flex items-center gap-4">
                 <Image src={uruguai} alt="Bandeira do Uruguai" />
                 <span className="font-bold text-xl">Uruguai</span>
               </div>
               <div className="mt-2 mb-2 flex items-center gap-4">
                 <Image src={gana} alt="Bandeira do Gana" />
                 <span className="font-bold text-xl">Gana</span>
-              </div>
-              <div className="mt-2 mb-2 flex items-center gap-4">
-                <Image src={coreia} alt="Bandeira do Coreia do Sul" />
-                <span className="font-bold text-xl">Coreia do Sul</span>
               </div>
                 
             </div>
@@ -1273,38 +1274,43 @@ export default function Palpite() {
           <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
             {championPosition.value && thirdPosition.value
               ?
-              <form onSubmit={handleCreatePalpite} className="mt-6 flex gap-2">
-                <input 
-                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                  type="hidden"
-                  name="first" 
-                  value={championPosition.value}
-                />
-                <input 
-                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                  type="hidden"
-                  name="second" 
-                  value={vicePosition.value}
-                />
-                <input 
-                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                  type="hidden"
-                  name="third" 
-                  value={thirdPosition.value}
-                />
-                <input 
-                  className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
-                  type="hidden"
-                  name="fourth" 
-                  value={fourPosition.value}
-                />
-                <button 
-                  className="bg-blue-300 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-blue-400"
-                  type="submit"
-                >
-                  Pode confirmar
-                </button>
-              </form>
+              <>
+                <form onSubmit={handleCreatePalpite} className="mt-6 flex gap-2">
+                  <input 
+                    className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                    type="hidden"
+                    name="first" 
+                    value={championPosition.value}
+                  />
+                  <input 
+                    className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                    type="hidden"
+                    name="second" 
+                    value={vicePosition.value}
+                  />
+                  <input 
+                    className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                    type="hidden"
+                    name="third" 
+                    value={thirdPosition.value}
+                  />
+                  <input 
+                    className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-white"
+                    type="hidden"
+                    name="fourth" 
+                    value={fourPosition.value}
+                  />
+                  <button 
+                    className="bg-blue-300 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-blue-400"
+                    type="submit"
+                  >
+                    Pode confirmar
+                  </button>
+                </form>
+                <h2 className="text-2xl my-4 p-4 bg-green-700 text-white rounded">
+                  Faça o pix no valor de R$5,00 para falecomdocavalcanti@gmail.com para validar sua aposta
+                </h2>
+              </>
             :
               <span>
                 Preencha todos os caminhos para a glória eterna

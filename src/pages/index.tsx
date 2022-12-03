@@ -4,10 +4,15 @@ import Palpite from "../components/Palpite";
 import Profile from "../components/Profile";
 import { getPalpitesUsers } from "../lib/palpiteUser";
 
-import axios from "axios";
-import { useEffect } from "react";
+import logoSite from '../assets/logo-adolpho.png';
 
-export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito }) {
+import axios from "axios";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { prisma } from "../lib/prisma";
+
+export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito, userByEmailTransform }) {
   const { data: session } = useSession();
   const user = session?.user;
 
@@ -27,7 +32,13 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito }) {
 
   return (
     <>
-      <nav className="max-w-[1310px] flex justify-end items-center mt-8 p-12 mx-auto bg-gray-500 text-white">
+
+      <nav className="max-w-[1310px] flex max-md:flex-col max-md:gap-4 justify-between items-center my-8 p-12 mx-auto bg-black border-b border-blue-300 text-white">
+        <Image src={logoSite} alt="Logo do site bolão do adolphera" />
+        <div className="flex items-center gap-6">
+          <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/">Home</Link>
+          <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/regras">Regras</Link>
+        </div>
         <Profile />
         <button
           onClick={(e) => {
@@ -41,14 +52,27 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito }) {
         
       </nav>
       
-      <hr></hr>
           {PalpiteFoiFeito 
             ?
             <div className="w-full flex flex-col justify-center items-center mt-7">
-              <h2 className="text-2xl">Você já fez o seu palpite, em breve você poderá acompanhar o andamento da sua aposta</h2>
+              <h2 className="text-2xl">Sua pontuação no momento é <strong className="text-blue-300 px-2 border-blue-300 border-4 border-solid rounded-full">{userByEmailTransform?.score}</strong></h2>
               <section className="w-full flex max-md:flex-col">
-                <div className="w-full flex flex-col justify-center items-center bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2 max-md:mx-0">
-
+                <div className="w-full flex flex-col justify-center items-center px-4 mt-2 mb-2 mx-2 max-md:mx-0">
+                  <span className="mt-8">Seu palpite</span>
+                  <ul className="py-8 flex justify-center items-center gap-4">
+                    <li>
+                      1º { userByEmailTransform?.champion && <Image src={`/./icon-${userByEmailTransform?.champion}.svg`} alt="" height="50" width="50" /> }
+                    </li>
+                    <li>
+                      2º { userByEmailTransform?.second && <Image src={`/./icon-${userByEmailTransform?.second}.svg`} alt="" height="50" width="50" /> }
+                    </li>
+                    <li>
+                      3º { userByEmailTransform?.Third && <Image src={`/./icon-${userByEmailTransform?.Third}.svg`} alt="" height="50" width="50" /> }
+                    </li>
+                    <li>
+                      4º { userByEmailTransform?.Fouth && <Image src={`/./icon-${userByEmailTransform?.Fouth}.svg`} alt="" height="50" width="50" /> }
+                    </li>
+                  </ul>
                 </div>
               </section>
             </div>
@@ -64,9 +88,27 @@ export async function getServerSideProps(context) {
 
   const providers = await getProviders();
   const session = await getSession(context);
-
   const user = session?.user;
-  
+
+  const userByEmail = await prisma.user.findFirst({
+    where: {
+      email: user?.email
+    },
+  });
+
+  function removeSpecialChar(txt: string) {
+    return txt?.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  }
+
+  const userByEmailTransform = {
+    name: userByEmail?.name || null,
+    score: userByEmail?.score || 0,
+    champion: removeSpecialChar(userByEmail?.champion) || null,
+    second: removeSpecialChar(userByEmail?.second) || null,
+    Third: removeSpecialChar(userByEmail?.Third) || null,
+    Fouth: removeSpecialChar(userByEmail?.Fouth) || null
+  }
+
   const verifyEmailExists = allUsersPalpites.filter(allUsersPalpite => (allUsersPalpite.email == user?.email));
   const PalpiteFoiFeito = verifyEmailExists.length > 0 ? true : false;
 
@@ -83,7 +125,8 @@ export async function getServerSideProps(context) {
       providers,
       session,
       allUsersPalpites: data,
-      PalpiteFoiFeito
+      PalpiteFoiFeito,
+      userByEmailTransform
     },
   };
 }

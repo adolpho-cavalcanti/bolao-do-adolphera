@@ -11,10 +11,11 @@ const Profile = () => {
   const { data: session } = useSession();
   const user: Iuser = session?.user;
   return (
-    
-      <ul className="flex max-md:flex-col gap-4">
-        <li>{user?.email}</li>
+    <div className="flex flex-col">
+      <ul className="flex flex-col gap-4 my-2 text-white px-2 py-2">
+        <li>{user?.name}</li>
       </ul>
+    </div>
   );
 };
 
