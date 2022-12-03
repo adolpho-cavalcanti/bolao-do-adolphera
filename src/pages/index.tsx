@@ -61,16 +61,28 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito, use
                   <span className="mt-8">Seu palpite</span>
                   <ul className="py-8 flex justify-center items-center gap-4">
                     <li>
-                      1º { userByEmailTransform?.champion && <Image src={`/./icon-${userByEmailTransform?.champion}.svg`} alt="" height="50" width="50" /> }
+                      1º { userByEmailTransform?.champion && 
+                        <span>
+                          <strong className="text-blue-300 px-2 border-blue-300 border-4 border-solid rounded-full">{userByEmailTransform?.champion}</strong>
+                        </span>}
                     </li>
                     <li>
-                      2º { userByEmailTransform?.second && <Image src={`/./icon-${userByEmailTransform?.second}.svg`} alt="" height="50" width="50" /> }
+                      2º { userByEmailTransform?.second && 
+                        <span>
+                          <strong className="text-blue-300 px-2 border-blue-300 border-4 border-solid rounded-full">{userByEmailTransform?.second}</strong>
+                        </span>}
                     </li>
                     <li>
-                      3º { userByEmailTransform?.Third && <Image src={`/./icon-${userByEmailTransform?.Third}.svg`} alt="" height="50" width="50" /> }
+                      3º { userByEmailTransform?.Third && 
+                        <span>
+                          <strong className="text-blue-300 px-2 border-blue-300 border-4 border-solid rounded-full">{userByEmailTransform?.Third}</strong>
+                        </span>}
                     </li>
                     <li>
-                      4º { userByEmailTransform?.Fouth && <Image src={`/./icon-${userByEmailTransform?.Fouth}.svg`} alt="" height="50" width="50" /> }
+                      4º { userByEmailTransform?.Fouth && 
+                        <span>
+                          <strong className="text-blue-300 px-2 border-blue-300 border-4 border-solid rounded-full">{userByEmailTransform?.Fouth}</strong>
+                        </span>}
                     </li>
                   </ul>
                 </div>
@@ -96,17 +108,13 @@ export async function getServerSideProps(context) {
     },
   });
 
-  function removeSpecialChar(txt: string) {
-    return txt?.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-  }
-
   const userByEmailTransform = {
     name: userByEmail?.name || null,
     score: userByEmail?.score || 0,
-    champion: removeSpecialChar(userByEmail?.champion) || null,
-    second: removeSpecialChar(userByEmail?.second) || null,
-    Third: removeSpecialChar(userByEmail?.Third) || null,
-    Fouth: removeSpecialChar(userByEmail?.Fouth) || null
+    champion: userByEmail?.champion || null,
+    second: userByEmail?.second || null,
+    Third: userByEmail?.Third || null,
+    Fouth: userByEmail?.Fouth || null
   }
 
   const verifyEmailExists = allUsersPalpites.filter(allUsersPalpite => (allUsersPalpite.email == user?.email));
