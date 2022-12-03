@@ -738,7 +738,7 @@ export default function Palpite() {
     const {value: Fouth} = fourPosition;
 
     try {
-      const data = await axios.post('http://localhost:3000/api/palpites', {
+      const data = await axios.post('https://www.bolaodoadolphera.com.br/api/palpites', {
         email,
 	      name,
         champion,
