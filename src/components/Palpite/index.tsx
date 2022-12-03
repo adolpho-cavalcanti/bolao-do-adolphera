@@ -1,4 +1,5 @@
 
+import { Button } from '@mui/material';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
@@ -297,7 +298,6 @@ export default function Palpite() {
         value: primaryA.value,
         image: primaryA.image
       });
-      // document.getElementById(primaryA.value).style.border = "1px solid green";
     } else {
       setQualificationQuartasJ1Home({
           value: secondB.value,
@@ -735,15 +735,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 1</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryA.value}>
-                <button className="active:border-solid" value={primaryA.value} onClick={() => handleOitavasJ1(primaryA)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryA.value} onClick={() => handleOitavasJ1(primaryA)}>
                   { primaryA.image && <Image src={`/./icon-${primaryA.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondB.value}>
-                <button value={secondB.value} onClick={() => handleOitavasJ1(secondB)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondB.value} onClick={() => handleOitavasJ1(secondB)}>
                   { secondB.image && <Image src={`/./icon-${secondB.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -751,15 +773,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 2</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryC.value}>
-                <button value={primaryC.value} onClick={() => handleOitavasJ2(primaryC)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryC.value} onClick={() => handleOitavasJ2(primaryC)}>
                   { primaryC.image && <Image src={`/./icon-${primaryC.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondD.value}>
-                <button value={secondD.value} onClick={() => handleOitavasJ2(secondD)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondD.value} onClick={() => handleOitavasJ2(secondD)}>
                   { secondD.image && <Image src={`/./icon-${secondD.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -767,15 +811,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 3</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryE.value}>
-                <button value={primaryE.value} onClick={() => handleOitavasJ3(primaryE)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryE.value} onClick={() => handleOitavasJ3(primaryE)}>
                   { primaryE.image && <Image src={`/./icon-${primaryE.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondF.value}>
-                <button value={secondF.value} onClick={() => handleOitavasJ3(secondF)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondF.value} onClick={() => handleOitavasJ3(secondF)}>
                   { secondF.image && <Image src={`/./icon-${secondF.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -783,15 +849,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 4</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryG.value}>
-                <button value={primaryG.value} onClick={() => handleOitavasJ4(primaryG)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryG.value} onClick={() => handleOitavasJ4(primaryG)}>
                   { primaryG.image && <Image src={`/./icon-${primaryG.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondH.value}>
-                <button value={secondH.value} onClick={() => handleOitavasJ4(secondH)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondH.value} onClick={() => handleOitavasJ4(secondH)}>
                   { secondH.image && <Image src={`/./icon-${secondH.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -801,15 +889,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 5</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryB.value}>
-                <button value={primaryB.value} onClick={() => handleOitavasJ5(primaryB)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryB.value} onClick={() => handleOitavasJ5(primaryB)}>
                   { primaryB.image && <Image src={`/./icon-${primaryB.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondA.value}>
-                <button value={secondA.value} onClick={() => handleOitavasJ5(secondA)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondA.value} onClick={() => handleOitavasJ5(secondA)}>
                   { secondA.image && <Image src={`/./icon-${secondA.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -817,15 +927,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 6</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryD.value}>
-                <button value={primaryD.value} onClick={() => handleOitavasJ6(primaryD)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryD.value} onClick={() => handleOitavasJ6(primaryD)}>
                   { primaryD.image && <Image src={`/./icon-${primaryD.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondC.value}>
-                <button value={secondC.value} onClick={() => handleOitavasJ6(secondC)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondC.value} onClick={() => handleOitavasJ6(secondC)}>
                   { secondC.image && <Image src={`/./icon-${secondC.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -833,15 +965,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 7</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryF.value}>
-                <button value={primaryF.value} onClick={() => handleOitavasJ7(primaryF)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryF.value} onClick={() => handleOitavasJ7(primaryF)}>
                   { primaryF.image && <Image src={`/./icon-${primaryF.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondE.value}>
-                <button value={secondE.value} onClick={() => handleOitavasJ7(secondE)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondE.value} onClick={() => handleOitavasJ7(secondE)}>
                   { secondE.image && <Image src={`/./icon-${secondE.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -849,15 +1003,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Oitavas 8</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={primaryH.value}>
-                <button value={primaryH.value} onClick={() => handleOitavasJ8(primaryH)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={primaryH.value} onClick={() => handleOitavasJ8(primaryH)}>
                   { primaryH.image && <Image src={`/./icon-${primaryH.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={secondG.value}>
-                <button value={secondG.value} onClick={() => handleOitavasJ8(secondG)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={secondG.value} onClick={() => handleOitavasJ8(secondG)}>
                   { secondG.image && <Image src={`/./icon-${secondG.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -871,15 +1047,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Quartas 1</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ1Home.value}>
-                <button value={qualificationQuartasJ1Home.value} onClick={() => handleQuartas1(qualificationQuartasJ1Home)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                  value={qualificationQuartasJ1Home.value} onClick={() => handleQuartas1(qualificationQuartasJ1Home)}>
                   { qualificationQuartasJ1Home.image && <Image src={`/./icon-${qualificationQuartasJ1Home.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ2Home.value}>
-                <button value={qualificationQuartasJ2Home.value} onClick={() => handleQuartas1(qualificationQuartasJ2Home)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ2Home.value} onClick={() => handleQuartas1(qualificationQuartasJ2Home)}>
                   { qualificationQuartasJ2Home.image && <Image src={`/./icon-${qualificationQuartasJ2Home.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -887,15 +1085,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Quartas 2</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ3Home.value}>
-                <button value={qualificationQuartasJ3Home.value} onClick={() => handleQuartas2(qualificationQuartasJ3Home)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ3Home.value} onClick={() => handleQuartas2(qualificationQuartasJ3Home)}>
                   { qualificationQuartasJ3Home.image && <Image src={`/./icon-${qualificationQuartasJ3Home.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ4Home.value}>
-                <button value={qualificationQuartasJ4Home.value} onClick={() => handleQuartas2(qualificationQuartasJ4Home)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ4Home.value} onClick={() => handleQuartas2(qualificationQuartasJ4Home)}>
                   { qualificationQuartasJ4Home.image && <Image src={`/./icon-${qualificationQuartasJ4Home.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -903,15 +1123,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Quartas 3</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ1Visit.value}>
-                <button value={qualificationQuartasJ1Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ1Visit)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ1Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ1Visit)}>
                   { qualificationQuartasJ1Visit.image && <Image src={`/./icon-${qualificationQuartasJ1Visit.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ2Visit.value}>
-                <button value={qualificationQuartasJ2Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ2Visit)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ2Visit.value} onClick={() => handleQuartas3(qualificationQuartasJ2Visit)}>
                   { qualificationQuartasJ2Visit.image && <Image src={`/./icon-${qualificationQuartasJ2Visit.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -919,15 +1161,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Quartas 4</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationQuartasJ3Visit.value}>
-                <button value={qualificationQuartasJ3Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ3Visit)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ3Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ3Visit)}>
                   { qualificationQuartasJ3Visit.image && <Image src={`/./icon-${qualificationQuartasJ3Visit.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationQuartasJ4Visit.value}>
-                <button value={qualificationQuartasJ4Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ4Visit)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationQuartasJ4Visit.value} onClick={() => handleQuartas4(qualificationQuartasJ4Visit)}>
                   { qualificationQuartasJ4Visit.image && <Image src={`/./icon-${qualificationQuartasJ4Visit.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -941,15 +1205,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Semifinais 1</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationSemi1.value}>
-                <button value={qualificationSemi1.value} onClick={() => handleSemi1(qualificationSemi1)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationSemi1.value} onClick={() => handleSemi1(qualificationSemi1)}>
                   { qualificationSemi1.image && <Image src={`/./icon-${qualificationSemi1.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationSemi2.value}>
-                <button value={qualificationSemi2.value} onClick={() => handleSemi1(qualificationSemi2)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationSemi2.value} onClick={() => handleSemi1(qualificationSemi2)}>
                   { qualificationSemi2.image && <Image src={`/./icon-${qualificationSemi2.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -957,15 +1243,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">Semifinais 2</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationSemi3.value}>
-                <button value={qualificationSemi3.value} onClick={() => handleSemi2(qualificationSemi3)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationSemi3.value} onClick={() => handleSemi2(qualificationSemi3)}>
                   { qualificationSemi3.image && <Image src={`/./icon-${qualificationSemi3.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationSemi4.value}>
-                <button value={qualificationSemi4.value} onClick={() => handleSemi2(qualificationSemi4)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationSemi4.value} onClick={() => handleSemi2(qualificationSemi4)}>
                   { qualificationSemi4.image && <Image src={`/./icon-${qualificationSemi4.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -980,15 +1288,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">3º Lugar</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationThirdPosition1.value}>
-                <button value={qualificationThirdPosition1.value} onClick={() => handleThirdPosition(qualificationThirdPosition1)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationThirdPosition1.value} onClick={() => handleThirdPosition(qualificationThirdPosition1)}>
                   { qualificationThirdPosition1.image && <Image src={`/./icon-${qualificationThirdPosition1.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationThirdPosition2.value}>
-                <button value={qualificationThirdPosition2.value} onClick={() => handleThirdPosition(qualificationThirdPosition2)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationThirdPosition2.value} onClick={() => handleThirdPosition(qualificationThirdPosition2)}>
                   { qualificationThirdPosition2.image && <Image src={`/./icon-${qualificationThirdPosition2.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
@@ -1002,15 +1332,37 @@ export default function Palpite() {
             <span className="text-blue-300 my-4">GRANDE FINAL</span>
             <ul className="flex justify-center items-center gap-4">
               <li id={qualificationFinal1.value}>
-                <button value={qualificationFinal1.value} onClick={() => handleFinal(qualificationFinal1)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationFinal1.value} onClick={() => handleFinal(qualificationFinal1)}>
                   { qualificationFinal1.image && <Image src={`/./icon-${qualificationFinal1.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
               <li> x </li>
               <li id={qualificationFinal2.value}>
-                <button value={qualificationFinal2.value} onClick={() => handleFinal(qualificationFinal2)}>
+                <Button 
+                  sx={{
+                    "&.Mui-selected": {},
+                    "&.Mui-focusVisible": {
+                      border: "3px solid green"
+                    },
+                    ":focus": {
+                      border: "3px solid green"
+                    },
+                    borderRadius: 50,
+                  }}
+                    value={qualificationFinal2.value} onClick={() => handleFinal(qualificationFinal2)}>
                   { qualificationFinal2.image && <Image src={`/./icon-${qualificationFinal2.image}.svg`} alt="" height="50" width="50" /> }
-                </button>
+                </Button>
               </li>
             </ul>
           </div>
