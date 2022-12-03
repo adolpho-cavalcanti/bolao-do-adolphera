@@ -19,7 +19,7 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito, use
   if (!session) return <Login providers={providers} />;
 
   const getPalpites = async() => {
-    await axios.get('http://localhost:3000/api/palpites')
+    await axios.get('https://www.bolaodoadolphera.com.br/api/palpites')
       .then(({data}) => {
         console.log('data' , data);
     });

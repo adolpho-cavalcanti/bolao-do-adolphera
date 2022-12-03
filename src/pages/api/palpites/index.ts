@@ -1,6 +1,14 @@
+import Cors from 'cors';
 import { NextApiRequest, NextApiResponse } from "next";
 import { getPalpitesUsers } from "../../../lib/palpiteUser";
 import { prisma } from "../../../lib/prisma";
+
+// Initializing the cors middleware
+// You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+const cors = Cors({
+  methods: ['POST', 'GET', 'HEAD'],
+})
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;

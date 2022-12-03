@@ -729,7 +729,7 @@ export default function Palpite() {
   }, []);
   
   const handleCreatePalpite = async (e: React.SyntheticEvent) => {
-    // e.preventDefault()
+    e.preventDefault();
     setState('Loading');
 
     const {value: champion} = championPosition;

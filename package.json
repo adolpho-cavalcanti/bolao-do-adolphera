@@ -16,6 +16,7 @@
     "@next-auth/fauna-adapter": "^0.2.2-next.15",
     "@prisma/client": "^4.6.1",
     "axios": "^1.2.0",
+    "cors": "^2.8.5",
     "faunadb": "^4.7.1",
     "handlebars": "^4.7.7",
     "install": "^0.13.0",
@@ -27,6 +28,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "autoprefixer": "^10.4.13",
