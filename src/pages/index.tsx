@@ -48,7 +48,9 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito, use
           <button
             onClick={(e) => {
               e.preventDefault();
-              signOut();
+              signOut({
+              callbackUrl: `${window.location.origin}`
+            });
             }}
             className="bg-red-500 rounded p-2 mx-4"
           >

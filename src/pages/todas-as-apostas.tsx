@@ -1,4 +1,4 @@
-import { signOut, useSession } from 'next-auth/react';
+import { getSession, signOut, useSession } from 'next-auth/react';
 import Image from "next/image";
 import Link from "next/link";
 import logoSite from '../assets/logo-adolpho.png';
@@ -13,7 +13,7 @@ interface IUser {
   name: string;
 }
 
-export default function TodasAsApostas ({ allUsersPalpites }) {
+export default function TodasAsApostas ({ allUsersPalpites, PalpiteFoiFeito }) {
   const { data: session } = useSession();
 
   const users = allUsersPalpites.map((user: IUser) => {
@@ -39,7 +39,9 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
         <button
           onClick={(e) => {
             e.preventDefault();
-            signOut();
+            signOut({
+              callbackUrl: `${window.location.origin}`
+            });
           }}
           className="bg-red-500 rounded p-2 mx-4"
         >
@@ -56,8 +58,9 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
           <h2 className="text-2xl mb-4 border-b-2 border-solid">Todos os palpites</h2>
         </div>
 
-        
-        <div className="w-full border-b-2 border-solid bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2">
+        {PalpiteFoiFeito 
+        ?
+          <div className="w-full border-b-2 border-solid bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2">
             <table className="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -80,9 +83,13 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
                   ))}
                 </tbody>
             </table>
-        </div>
-
-      </div>
+          </div>
+        :
+          <div className="w-full border-b-2 border-solid bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2">
+            <h2>Você não pode visiualizar as apostas sem antes fazer a sua</h2>
+          </div>
+        }
+    </div>
 
   </main>
   </>
@@ -91,6 +98,13 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
 
 export async function getServerSideProps(context) {
   const allUsersPalpites = await getPalpitesUsers();
+
+  const session = await getSession(context);
+  const user = session?.user;
+
+  const verifyEmailExists = allUsersPalpites.filter(allUsersPalpite => (allUsersPalpite.email == user?.email));
+  const PalpiteFoiFeito = verifyEmailExists.length > 0 ? true : false;
+
   const data = allUsersPalpites.map(allUsersPalpite => {
     return {
       champion: allUsersPalpite.champion,
@@ -102,11 +116,10 @@ export async function getServerSideProps(context) {
     }
   });
 
-  console.log(data, 'server side');
-
   return {
     props: {
       allUsersPalpites: data,
+      PalpiteFoiFeito
     },
   };
 }
