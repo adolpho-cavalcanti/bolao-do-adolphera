@@ -1,4 +1,4 @@
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logoSite from '../assets/logo-adolpho.png';
@@ -6,6 +6,10 @@ import Profile from '../components/Profile';
 
 
 export default function regras() {
+
+  const { data: session } = useSession();
+  const user = session?.user;
+
   return (
     <>
       <nav className="max-w-[1310px] flex max-md:flex-col max-md:gap-4 justify-between items-center my-8 p-12 mx-auto bg-black border-b border-blue-300 text-white">
@@ -15,15 +19,21 @@ export default function regras() {
           <Link className="text-white px-4 py-2 border-solid border-blue-300 border-2 hover:bg-blue-300 hover:text-gray-900 rounded" href="/regras">Regras</Link>
         </div>
         <Profile />
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            signOut();
-          }}
-          className="bg-red-500 rounded p-2 mx-4"
-        >
-          Sair
-        </button>
+        {!session
+          ?
+          <></>
+          :
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              signOut();
+            }}
+            className="bg-red-500 rounded p-2 mx-4"
+          >
+            Sair
+          </button>
+        }
+        
           
       </nav>
       <main className="max-w-[1310px] h-full mt-2 mx-auto bg-black text-white">
