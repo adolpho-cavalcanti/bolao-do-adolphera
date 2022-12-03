@@ -34,6 +34,8 @@ import usa from '../../assets/bandeiras/icon-united_states.svg';
 import uruguai from '../../assets/bandeiras/icon-uruguay.svg';
 import gales from '../../assets/bandeiras/icon-wales.svg';
 
+import { signIn } from "next-auth/react";
+import logoGmail from '../../assets/gmail-logo.png';
 import logoSite from '../../assets/logo-adolpho.png';
 
 
@@ -49,7 +51,7 @@ const Login = ({ providers }) => {
             <span><strong className="text-xl">R$5 </strong> Dê o seu palpite e acompanhe os palpites dos seus adiversários</span>
           </div>
         </div>
-        {/* {Object.values(providers).map((provider: any) => (
+        {Object.values(providers).map((provider: any) => (
           <div key={provider.name}>
             <button 
               onClick={() => signIn(provider.id, { callbackUrl: "/" })}
@@ -59,7 +61,7 @@ const Login = ({ providers }) => {
               <Image src={logoGmail} alt="logo Gmail" width={20} />
             </button>
           </div>
-        ))} */}
+        ))}
         
       </nav>
 
