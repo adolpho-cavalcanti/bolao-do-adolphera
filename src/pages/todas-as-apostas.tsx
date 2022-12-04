@@ -13,7 +13,7 @@ interface IUser {
   name: string;
 }
 
-export default function TodasAsApostas ({ allUsersPalpites, PalpiteFoiFeito }) {
+export default function TodasAsApostas ({ allUsersPalpites }) {
   const { data: session } = useSession();
 
   const users = allUsersPalpites.map((user: IUser) => {
@@ -58,37 +58,62 @@ export default function TodasAsApostas ({ allUsersPalpites, PalpiteFoiFeito }) {
           <h2 className="text-2xl mb-4 border-b-2 border-solid">Todos os palpites</h2>
         </div>
 
-        {PalpiteFoiFeito 
-        ?
-          <div className="w-full border-b-2 border-solid bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2">
-            <table className="w-full  text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                      <th scope="col" className="py-3 px-6">Apostador</th>
-                      <th scope="col" className="py-3 px-6">Campeão</th>
-                      <th scope="col" className="py-3 px-6">Vice</th>
-                      <th scope="col" className="py-3 px-6">3º Lugar</th>
-                      <th scope="col" className="py-3 px-6">4º Lugar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  {allUsersPalpites.map((user) => (
-                    <tr className="bg-gray border-b dark:bg-gray-800 dark:border-gray-700">
-                      <td scope="row" className="py-4 px-6 font-medium text-white whitespace-nowrap dark:text-white" key={user.email}>{user.name}</td>
-                      <td scope="row" className="py-4 px-6 font-medium text-white whitespace-nowrap dark:text-white">{user.champion}</td>
-                      <td scope="row" className="py-4 px-6 font-medium text-white whitespace-nowrap dark:text-white">{user.second}</td>
-                      <td scope="row" className="py-4 px-6 font-medium text-white whitespace-nowrap dark:text-white">{user.third}</td>
-                      <td scope="row" className="py-4 px-6 font-medium text-white whitespace-nowrap dark:text-white">{user.fourth}</td>
-                    </tr>
-                  ))}
-                </tbody>
-            </table>
+        <div className="w-full min-h-screen bg-black py-5">
+          <div className='overflow-x-auto w-full'>
+              <table className='mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden'>
+                  <thead className="bg-gray-900">
+                      <tr className="text-white text-left">
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> Nome </th>
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> Campeão </th>
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> Vice </th>
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> 3º Lugar </th>
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> 4º Lugar </th>
+                      </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {allUsersPalpites.map((user) => (
+                      <tr>
+                          <td className="px-6 py-4" key={user.email}>
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.name} </p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td className="px-6 py-4">
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.champion} </p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td className="px-6 py-4">
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.second} </p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td className="px-6 py-4">
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.third} </p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td className="px-6 py-4">
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.fourth} </p>
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                      ))}
+                  </tbody>
+              </table>
           </div>
-        :
-          <div className="w-full border-b-2 border-solid bg-gray-700 rounded py-4 px-4 mt-2 mb-2 mx-2">
-            <h2>Você não pode visiualizar as apostas sem antes fazer a sua</h2>
-          </div>
-        }
+      </div>
     </div>
 
   </main>
@@ -101,9 +126,6 @@ export async function getServerSideProps(context) {
 
   const session = await getSession(context);
   const user = session?.user;
-
-  const verifyEmailExists = allUsersPalpites.filter(allUsersPalpite => (allUsersPalpite.email == user?.email));
-  const PalpiteFoiFeito = verifyEmailExists.length > 0 ? true : false;
 
   const data = allUsersPalpites.map(allUsersPalpite => {
     return {
@@ -118,8 +140,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      allUsersPalpites: data,
-      PalpiteFoiFeito
+      allUsersPalpites: data
     },
   };
 }

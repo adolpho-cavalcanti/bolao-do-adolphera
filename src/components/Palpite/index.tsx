@@ -725,9 +725,19 @@ export default function Palpite() {
     }
   }
 
+  const apostasEncerradas = true;
+
   return (
     <main className="max-w-[1310px] h-full mt-2 mx-auto bg-black text-white">
-
+      
+      {
+      apostasEncerradas
+      ?
+      <div className="w-full flex flex-col justify-center items-center mt-7">
+        <h1 className="text-4xl">Apostas Encerradas</h1>
+      </div>
+      :
+      <> 
       <div className="w-full flex flex-col justify-center items-center mt-7">
         <h2 className="text-2xl">Oitavas de Final</h2>
         <section className="w-full flex max-md:flex-col">
@@ -1454,6 +1464,7 @@ export default function Palpite() {
           </div>
         </section>
       </div>
+      </>}
 
     </main>
   );
