@@ -66,7 +66,7 @@ export default function Home({ providers, allUsersPalpites, PalpiteFoiFeito, use
           <section className="w-full flex max-md:flex-col">
             <div className="w-full flex flex-col justify-center items-center px-4 mt-2 mb-2 mx-2 max-md:mx-0">
               <span className="mt-8">Seu palpite</span>
-              <ul className="py-8 flex justify-center items-center gap-4">
+              <ul className="py-8 px-8 flex flex-col justify-center items-start gap-4">
                 <li>
                   1º { userByEmailTransform?.champion && 
                     <span>
