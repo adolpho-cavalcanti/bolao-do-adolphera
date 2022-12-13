@@ -6,6 +6,7 @@ import Profile from '../components/Profile';
 import { getPalpitesUsers } from "../lib/palpiteUser";
 
 interface IUser {
+  score: number;
   champion: string;
   second: string;
   third: string;
@@ -64,6 +65,7 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
                   <thead className="bg-gray-900">
                       <tr className="text-white text-left">
                           <th className="font-semibold text-sm uppercase px-6 py-4"> Nome </th>
+                          <th className="font-semibold text-sm uppercase px-6 py-4"> Pontos </th>
                           <th className="font-semibold text-sm uppercase px-6 py-4"> Campeão </th>
                           <th className="font-semibold text-sm uppercase px-6 py-4"> Vice </th>
                           <th className="font-semibold text-sm uppercase px-6 py-4"> 3º Lugar </th>
@@ -77,6 +79,13 @@ export default function TodasAsApostas ({ allUsersPalpites }) {
                               <div className="flex items-center space-x-3">
                                   <div>
                                       <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.name} </p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td className="px-6 py-4">
+                              <div className="flex items-center space-x-3">
+                                  <div>
+                                      <p className="text-gray-500 text-sm font-semibold tracking-wide"> {user.score} </p>
                                   </div>
                               </div>
                           </td>
@@ -129,6 +138,7 @@ export async function getServerSideProps(context) {
 
   const data = allUsersPalpites.map(allUsersPalpite => {
     return {
+      score: allUsersPalpite.score,
       champion: allUsersPalpite.champion,
       second: allUsersPalpite.second,
       third: allUsersPalpite.Third,
