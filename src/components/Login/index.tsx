@@ -48,7 +48,7 @@ const Login = ({ providers }) => {
         <div className="flex items-center gap-6">
           <Image src={iconCheck} alt="" />
           <div className="flex flex-col">
-            <span><strong className="text-xl">R$5 </strong> Dê o seu palpite e acompanhe os palpites dos seus adiversários</span>
+            <span><strong className="text-xl">R$5 </strong> COPA rolando, acompanhe os palpites dos seus adiversários</span>
           </div>
         </div>
         {Object.values(providers).map((provider: any) => (
